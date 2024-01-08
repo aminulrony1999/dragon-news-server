@@ -13,7 +13,7 @@ app.get("/categories",(req,res) => {
 })
 app.get("/categories/:id",(req,res) => {
     const id = req.params.id;
-    const selectedNews = categories.find(n => n.id === id);
+    const selectedNews = news.filter(n => n.category_id === id);
     res.send(selectedNews);
 })
 app.get("/news",(req,res) =>{
